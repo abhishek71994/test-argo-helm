@@ -1,11 +1,12 @@
-FROM node:12.16.1-alpine3.11
+FROM node:20-bullseye-slim
 
-WORKDIR /app
+WORKDIR /app_nest
 
-COPY package.json /app
+COPY package.json /app_nest
+RUN mkdir node_modules
+RUN npm install -g pnpm
+RUN pnpm install
 
-RUN npm install
-
-COPY . /app
+COPY . /app_nest
 
 CMD ["npm", "start"]
