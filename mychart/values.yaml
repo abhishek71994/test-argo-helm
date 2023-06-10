@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: "abhi597/argo-test"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "0.3"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -82,3 +82,6 @@ tolerations: []
 affinity: {}
 
 favouriteDrink: coffee
+
+deployment:
+  name: myapp
