@@ -1,9 +1,11 @@
 FROM node:12.16.1-alpine3.11
 
-COPY package.json .
+WORKDIR /app
+
+COPY package.json /app
 
 RUN npm install
 
-COPY . .
+COPY . /app
 
 CMD ["npm", "start"]
