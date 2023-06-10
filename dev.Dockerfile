@@ -1,11 +1,9 @@
-FROM node:20-bullseye-slim
-
+FROM node:12.22-buster-slim
 WORKDIR /app_nest
 
 COPY package.json /app_nest
 RUN mkdir node_modules
-RUN npm install -g pnpm
-RUN pnpm install
+RUN npm install
 
 COPY . /app_nest
 
